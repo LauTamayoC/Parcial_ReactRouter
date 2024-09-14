@@ -4,6 +4,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 import Home from './src/screens/Home';
 import Details from './src/screens/Details';
@@ -61,12 +62,27 @@ function TabNavigator() {
 function DrawerNavigator() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Main" component={TabNavigator} />
+      {/* Agrega el ícono para "Main" */}
+      <Drawer.Screen 
+        name="Main" 
+        component={TabNavigator} 
+        options={{
+          title: 'Principal',
+          drawerIcon: ({ color, size }) => (
+            <AntDesign name="smile-circle" size={24} color="black" />
+          ),
+        }} 
+      />
       
       <Drawer.Screen 
         name="About" 
         component={About} 
-        options={{ title: 'Acerca de' }} 
+        options={{
+          title: 'Acerca de',
+          drawerIcon: ({ color, size }) => (
+            <AntDesign name="smileo" size={size} color={color} /> 
+          ),
+        }} 
       />
     </Drawer.Navigator>
   );

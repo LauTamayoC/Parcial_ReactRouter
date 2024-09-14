@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
+
 const About = ({ navigation }) => {
   return (
     <View style={styles.container}>
+
       <Text style={styles.title}>About this App</Text>
       <Text style={styles.paragraph}>
         This app fetches data from NASA's Astronomy Picture of the Day (APOD) API and displays beautiful space images along with detailed information.
@@ -12,7 +14,7 @@ const About = ({ navigation }) => {
       <Text style={styles.paragraph}>- View daily astronomy images</Text>
       <Text style={styles.paragraph}>- Get detailed information on each image</Text>
       <Text style={styles.paragraph}>- Smooth navigation between screens</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Devolver a Home" onPress={() => navigation.navigate('Home')} />
       <Text style={styles.version}>Version 1.0.0</Text>
     </View>
   );
