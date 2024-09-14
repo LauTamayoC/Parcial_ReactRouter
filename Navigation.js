@@ -7,6 +7,7 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 import Home from './src/screens/Home';
 import Details from './src/screens/Details';
+import About from './src/screens/About';  
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -18,7 +19,7 @@ function HomeStack() {
       <Stack.Screen 
         name="HomeScreen" 
         component={Home} 
-        options={{ title: 'NASA APOD IMAGENES' }}
+        options={{ title: 'NASA APOD IMÁGENES' }}
       />
       <Stack.Screen 
         name="Details" 
@@ -42,6 +43,17 @@ function TabNavigator() {
           headerShown: false,
         }}
       />
+      
+      <Tab.Screen
+        name="About"
+        component={About}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5 name="info-circle" size={size} color={color} />
+          ),
+          title: 'Acerca de'
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -50,6 +62,12 @@ function DrawerNavigator() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Main" component={TabNavigator} />
+      
+      <Drawer.Screen 
+        name="About" 
+        component={About} 
+        options={{ title: 'Acerca de' }} 
+      />
     </Drawer.Navigator>
   );
 }

@@ -2,15 +2,15 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
 const Details = ({ route }) => {
-  const { apodData } = route.params;
+  const { apod } = route.params;
 
   return (
     <ScrollView style={styles.container}>
-      <Image source={{ uri: apodData.url }} style={styles.image} /> 
+      <Image source={{ uri: apod.url }} style={styles.image} />
       <View style={styles.infoContainer}>
-        <Text style={styles.title}>{apodData.title}</Text>
-        <Text style={styles.date}>{apodData.date}</Text>
-        <Text style={styles.explanation}>{apodData.explanation}</Text>
+        <Text style={styles.title}>{apod.title}</Text>
+        <Text style={styles.date}>{apod.date}</Text>
+        <Text style={styles.explanation}>{apod.explanation}</Text>
       </View>
     </ScrollView>
   );
@@ -19,6 +19,7 @@ const Details = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f5f5f5',
   },
   image: {
     width: '100%',
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#333',
     marginBottom: 10,
   },
   date: {
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
   },
   explanation: {
     fontSize: 16,
+    color: '#333',
     lineHeight: 24,
   },
 });
